@@ -17,7 +17,7 @@ class AcmeDemoBundleInstaller implements Installation
      */
     public function getMigrationVersion()
     {
-        return 'v1_1';
+        return 'v1_0';
     }
 
     /**
@@ -40,9 +40,8 @@ class AcmeDemoBundleInstaller implements Installation
     {
         $table = $schema->createTable('custom_table_for_test');
         $table->addColumn('id', 'integer', ['autoincrement' => true]);
-        $table->addColumn('name', 'string', ['length' => 250]);
+        $table->addColumn('name', 'string', ['length' => 255]);
         $table->addColumn('type', 'string', ['length' => 255]);
-        $table->addColumn('description', 'string', ['notnull' => false, 'length' => 200]);
         $table->setPrimaryKey(['id']);
     }
 }
