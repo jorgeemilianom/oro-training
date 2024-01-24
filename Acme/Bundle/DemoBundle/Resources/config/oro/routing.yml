@@ -1,4 +1,4 @@
 acme_demo:
-  resource: "@AcmeDemoBundle/Controller"
-  type: annotation
-  prefix: /demo
+    resource:     "@AcmeDemoBundle/Controller"
+    type:         annotation
+    prefix:       /demo

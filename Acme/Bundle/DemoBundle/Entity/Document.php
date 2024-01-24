@@ -3,12 +3,33 @@
 namespace Acme\Bundle\DemoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Oro\Bundle\EntityConfigBundle\Metadata\Annotation\Config;
 
 /**
  * ORM Entity Document.
  *
  * @ORM\Entity()
  * @ORM\Table(name="custom_table_for_test")
+ * @Config(
+ *      routeName="acme_index_document",
+ *      defaultValues={
+ *          "entity"={
+ *              "icon"="fa-file-text"
+ *          },
+ *          "ownership"={
+ *              "owner_type"="USER",
+ *              "owner_field_name"="owner",
+ *              "owner_column_name"="user_owner_id",
+ *              "organization_field_name"="organization",
+ *              "organization_column_name"="organization_id"
+ *          },
+ *          "security"={
+ *              "type"="ACL",
+ *              "group_name"="",
+ *              "category"="account_management"
+ *          }
+ *      }
+ * )
  */
 class Document
 {
@@ -50,7 +71,6 @@ class Document
      * )
      */
     private $description;
-
 
     public function getId(): ?int
     {
@@ -96,4 +116,5 @@ class Document
 
         return $this;
     }
+
 }

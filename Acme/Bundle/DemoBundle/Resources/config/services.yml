@@ -1,0 +1,7 @@
+services:
+  acme.demo.form.type.document:
+    class: Acme\Bundle\DemoBundle\Form\Type\DocumentType
+    arguments:
+      - "@doctrine"
+    tags:
+      - { name: form.type }

@@ -1,0 +1,23 @@
+acme:
+  demo:
+    document:
+      entity_plural_label: Aaxis
+      entity_label: "a new document"
+      form:
+        name:
+          label: "Name"
+        type:
+          label: "Type"
+          web: "Web"
+          local: "Local"
+          dual: "Dual"
+        description:
+          label: "Description"
+    controller:
+      document:
+        saved:
+          message: "Documento guardado"
+    section:
+      document:
+        general:
+          label: "General"

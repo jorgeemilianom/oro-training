@@ -1,0 +1,25 @@
+{% extends '@OroUI/actions/view.html.twig' %}
+
+{% oro_title_set({params : {"%name%": entity.name|default('N/A'|trans)}}) %}
+
+{% block pageHeader %}
+	{% set breadcrumbs = {
+        'entity': entity,
+        'indexPath': path('acme_index_document'),
+        'indexLabel': 'acme.demo.document.entity_plural_label'|trans,
+        'entityTitle': entity|oro_format_name|default('N/A'|trans)
+        }
+    %}
+	{{ parent() }}
+{% endblock pageHeader %}
+
+{% block content_data %}
+	<h3>Document informatión</h3>
+
+	<ul class="list-group">
+		<li class="list-group-item">Name: {{entity.name}}</li>
+		<li class="list-group-item">Type: {{entity.type}}</li>
+		<li class="list-group-item">Description: {{entity.description}}</li>
+	</ul>
+
+{% endblock content_data %}

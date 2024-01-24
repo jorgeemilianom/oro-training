@@ -1,0 +1,64 @@
+datagrids:
+    acme-demo-document-grid:
+        extended_entity_name: 'Acme\Bundle\DemoBundle\Entity\Document'
+        acl_resource: acme_demo_document_view
+        inline_editing:
+            enable: true
+        properties:
+            id: ~
+            view_link:
+                type: url
+                route: acme_demo_document_view
+                params:     [ id ]
+            update_link:
+                type: url
+                route: acme_demo_document_update
+                params:     [ id ]
+        actions:
+            view:
+                type: navigate
+                acl_resource: acme_demo_document_view
+                label: View
+                icon: eye
+                link: view_link
+                rowAction: true
+            update:
+                type: navigate
+                acl_resource: acme_demo_document_update
+                label: Edit
+                icon: pencil-square-o
+                link: update_link
+        source:
+            type: orm
+            query:
+                select:
+                    - d.id
+                    - d.name
+                    - d.type
+                    - d.description
+                from:
+                    - { table: Acme\Bundle\DemoBundle\Entity\Document, alias: d }
+        columns:
+            id:
+                label: ID
+            name:
+                label: Name
+            type:
+                label: Type
+            description:
+                label: Description
+        sorters:
+            columns:
+                name:
+                    data_name: d.name
+                type:
+                    data_name: d.type
+            disable_default_sorting: true
+        # filters:
+        #     columns:
+        #         name:
+        #             type: string
+        #         type:
+        #             type: choice
+        #             options:
+        #                 choices: [web, local, dual]
