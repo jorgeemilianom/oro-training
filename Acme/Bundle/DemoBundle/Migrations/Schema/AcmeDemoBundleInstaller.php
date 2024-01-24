@@ -17,7 +17,7 @@ class AcmeDemoBundleInstaller implements Installation
      */
     public function getMigrationVersion()
     {
-        return 'v1_1';
+        return 'v1_2';
     }
 
     /**
@@ -25,10 +25,8 @@ class AcmeDemoBundleInstaller implements Installation
      */
     public function up(Schema $schema, QueryBag $queries)
     {
-        /** Tables generation **/
         $this->createCustomTableForTestTable($schema);
-
-        /** Foreign keys generation **/
+        $this->addDescriptionField($schema);
     }
 
     /**
@@ -45,4 +43,14 @@ class AcmeDemoBundleInstaller implements Installation
         $table->addColumn('description', 'string', ['notnull' => false, 'length' => 200]);
         $table->setPrimaryKey(['id']);
     }
+
+    protected function addDescriptionField(Schema $schema)
+    {
+        $table = $schema->getTable('custom_table_for_test');
+        if(!$table->hasColumn('description')) {
+            $table->addColumn('description', 'string', ['notnull' => false, 'length' => 200]);
+        }
+
+    }
+
 }
