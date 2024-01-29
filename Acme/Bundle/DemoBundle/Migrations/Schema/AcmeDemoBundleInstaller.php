@@ -40,7 +40,6 @@ class AcmeDemoBundleInstaller implements Installation
         $table->addColumn('id', 'integer', ['autoincrement' => true]);
         $table->addColumn('name', 'string', ['length' => 250]);
         $table->addColumn('type', 'string', ['length' => 255]);
-        $table->addColumn('description', 'string', ['notnull' => false, 'length' => 200]);
         $table->setPrimaryKey(['id']);
     }
 

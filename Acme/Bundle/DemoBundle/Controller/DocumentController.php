@@ -69,7 +69,6 @@ class DocumentController extends AbstractController
         $createMessage = $this->get(TranslatorInterface::class)->trans(
             'acme.demo.controller.document.saved.message'
         );
-        var_dump($request);die;
         $Document = new Document();
         return $this->update($Document, $request, $createMessage);
     }

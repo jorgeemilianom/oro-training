@@ -1,0 +1,10 @@
+navigation:
+  menu_config:
+    items:
+      view_document_sidebar:
+        label: "Documents"
+        route: "acme_index_document"
+    tree:
+      application_menu:
+        children:
+          view_document_sidebar: ~
