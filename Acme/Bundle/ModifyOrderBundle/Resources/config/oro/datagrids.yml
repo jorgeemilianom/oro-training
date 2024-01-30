@@ -1,0 +1,20 @@
+datagrids:
+    frontend-orders-grid:
+        extends: base-orders-grid
+        source:
+            query:
+                select:
+                    - CONCAT(customerUser.firstName, ' ', customerUser.lastName) as fullname
+                join:
+                    left:
+                        - { join: order1.customerUser, alias: customerUser }
+        columns:
+            fullname:
+                label: acme.modifyorder.layout.customer_name
+                type: twig
+                template: "@AcmeModifyOrder/Order/Datagrid/frontendFullNameClient.html.twig"
+                frontend_type: html
+            paymentMethods:
+                label: oro.order.payment_method.label
+                renderable: false
+                visible: false

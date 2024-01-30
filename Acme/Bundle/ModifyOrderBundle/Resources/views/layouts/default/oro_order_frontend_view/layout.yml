@@ -1,0 +1,29 @@
+layout:
+    actions:
+        - '@add':
+            id: order_customer_email
+            blockType: text
+            parentId: order_body_column_left
+            options:
+                text: '=data["order"].getCustomerUser().getEmail()'
+                label: acme.modifyorder.order_detail.customer_email
+                additional_block_prefixes: ['order_body_column_element']
+            prepend: true
+        - '@add':
+            id: order_customer_last_name
+            blockType: text
+            parentId: order_body_column_left
+            options:
+                text: '=data["order"].getCustomerUser().getLastName()'
+                label: acme.modifyorder.order_detail.customer_last_name
+                additional_block_prefixes: ['order_body_column_element']
+            prepend: true
+        - '@add':
+            id: order_customer_first_name
+            blockType: text
+            parentId: order_body_column_left
+            options:
+                text: '=data["order"].getCustomerUser().getFirstName()'
+                label: acme.modifyorder.order_detail.customer_first_name
+                additional_block_prefixes: ['order_body_column_element']
+            prepend: true

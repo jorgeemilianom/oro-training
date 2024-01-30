@@ -1,0 +1,8 @@
+acme:
+  modifyorder:
+    layout:
+      customer_name: "Full name"
+    order_detail:
+      customer_first_name: "Client fist name"
+      customer_email: "Client e-mail"
+      customer_last_name: "Client last name"
