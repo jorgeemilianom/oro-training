@@ -1,0 +1,2 @@
+bundles:
+  - { name: Acme\Bundle\CollectOnDeliveryBundle\AcmeCollectOnDeliveryBundle, priority: 255 }

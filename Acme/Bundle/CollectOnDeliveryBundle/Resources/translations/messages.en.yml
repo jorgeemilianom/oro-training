@@ -1,0 +1,9 @@
+acme:
+    collect_on_delivery:
+        settings:
+            labels.label: 'Labels'
+            short_labels.label: 'Short Labels'
+            transport.label: 'RapiPago Delivery'
+
+        channel_type.label: 'RapiPago Delivery'
+        payment_method_message: 'Pay with RapiPago Delivery'
